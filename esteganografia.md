@@ -50,7 +50,7 @@ which steghide
 ~~~
 :ballot_box_with_check: Puedes crear un directorio de trabajo.
 ~~~
-mkdir criptografía && cd criptografía
+mkdir criptografia && cd criptografia
 ~~~
 :ballot_box_with_check: Ahora escribe tu mensaje secreto.
 ~~~
