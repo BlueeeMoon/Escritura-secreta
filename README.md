@@ -12,7 +12,7 @@ Repositorio con información acerca de la historia de la criptografía, ejemplos
 - [Sistemas antiguos de cifrado](sistemas_antiguos_de_cifrado.md).
 - [Esteganografía](esteganografia.md).
 - [Criptoanálisis](criptoanalisis.md).
-- Cifrado Cesar.
+- [Cifrado Cesar](cifra_cesar.md).
 - Criptografía en la literatura.
 - Cifrados polialfabéticos.
 - Claves secretas.
