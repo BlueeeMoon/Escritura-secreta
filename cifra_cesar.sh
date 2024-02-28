@@ -25,14 +25,14 @@ valida_cadena(){
 	read texto_llano
 	while ! [[ "$texto_llano" =~ [a-zA-Z] ]]; do #Expresión regular que verifica si la entrada es cualquier letra en mayúscula o minúscula.
 		echo -e "\n${blueColour}[+]${endColour}${redColour}Sólo caracteres válidos, inténtalo de nuevo.${endColour}"
-        read texto_llano
+        	read texto_llano
 	done   
 }
 
 valida_numero(){
 	echo -e "\n${redColour}[+]${endColour}${blueColour}Elige un despazamiento entre 1 a 25:${endColour}"
-    read desplazamiento
-    local rango=25
+    	read desplazamiento
+    	local rango=25
 	while ! [[ "$desplazamiento" -lt "$rango" && "$desplazamiento" =~ [0-9] ]]; do #Validar si es número y si esta dentro del rango.
 		echo -e "\n${blueColour}[+]${endColour}${redColour}Sólo números válidos, inténtalo de nuevo.${endColour}"
 		read desplazamiento
@@ -47,23 +47,21 @@ cesar_cifra() {
 		caracter="${texto_llano:$i:1}" #Extraer cada carácter.
 		i=$((i + 1))
 		if [[ "$caracter" =~ [a-zA-Z] ]]; then
-            if [[ "$caracter" =~ [A-Z] ]]; then
-				#Convertir caracter a número decimal.
-                nueva_vald=$(( ( $(printf '%d' "'$caracter") - 65 + desplazamiento) % 26 + 65 ))
+	        	if [[ "$caracter" =~ [A-Z] ]]; then #Convertir caracter a número decimal.
+	                	nueva_vald=$(( ( $(printf '%d' "'$caracter") - 65 + desplazamiento) % 26 + 65 ))
 				#65 es A en decimal. Si ingreso por ejemplo B al convertirlo será 66 y con un despazamiento de 3 tenemos: 
 				#(66-65+3)Mod 26+65=69 que sería la letra E en decimal
-            else
+	            	else
 				#Lo mismo para las letras minúscula
-                nueva_vald=$(( ( $(printf '%d' "'$caracter") - 97 + desplazamiento) % 26 + 97 ))
-            fi
-            resultado+="$(printf \\$(printf '%03o' "$nueva_vald"))"
-        else
-
-            resultado+="$caracter"
-        fi
-    done
+	                	nueva_vald=$(( ( $(printf '%d' "'$caracter") - 97 + desplazamiento) % 26 + 97 ))
+	            	fi
+	            		resultado+="$(printf \\$(printf '%03o' "$nueva_vald"))"
+       			else
+            			resultado+="$caracter"
+        		fi
+    	done
 	
-    echo -e "\n${redColour}[+]${endColour}${blueColour}Tu mensaje cifrado es:\n${endColour}${resultado}"
+    	echo -e "\n${redColour}[+]${endColour}${blueColour}Tu mensaje cifrado es:\n${endColour}${resultado}"
 }
 #Cifrar el mensaje
 valida_cadena
