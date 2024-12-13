@@ -22,7 +22,11 @@ Repositorio con información acerca de la historia de la criptografía, ejemplos
 - Protocolos criptográficos.
 - Seguridad criptográfica. 
 - Criptografía con curvas elípticas.
-
+- **Criptografía avanzada**:
+  - **Cifrado Homomórfico Completo (FHE)**.
+  - **Pruebas de Conocimiento Cero (ZK-Snark y ZK-Stark)**.
+  - **Computación Multipartidaria (MPC)**.
+  - Aplicaciones en blockchain y privacidad.
 ---
 
 ## Introducción 
